@@ -25,6 +25,7 @@
 	[ F(Item) || Item <- List] %% 列表推导 等同于 lists:map(Function(Item),List)
 
 **列表推导**
+
 	[X || Qualifier1, Qualifier2, ... ]
 	X 是任意一条表达式，后面的限定符(Qualifier)可以是生成器、位串生成器、过滤器。
 	生成器(generator),写法： Pattern <- ListExper
