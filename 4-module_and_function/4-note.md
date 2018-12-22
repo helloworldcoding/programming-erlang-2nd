@@ -65,3 +65,34 @@
 		8.短路布尔表达式
 		
 	if和case语句
+	当单独定义函数子句不方便的时候。
+	
+	1.case表达式
+	case Expression of
+		Pattern1 [when Guard1] -> Expr_seq1;
+		Pattern2 [when Guard2] -> Expr_seq2;
+		...
+		PatternN [when GuardN] -> Expr_seqN
+		%% 都不匹配，就发生错误异常
+	end
+
+	2.if表达式
+	if 
+		Gurad1 -> Expr_seq1;
+		Gurad2 -> Expr_seq2;
+		...
+		GuradN -> Expr_seqN
+		%% 依次执行Guard的值，为true,则执行表达式Expr_seq。
+		%% 如果所有的关卡都失败，发生异常
+	end
+
+	几个要点：
+	1.总是向列表头添加元素
+	2.从输入列表的头部提取元素，然后把它们添加都输出列表的头部，形成的结果是与输入列表顺序相反的输出列表
+	3.如果顺序很重要，就调用lists:reverse/1这个高度优化过的函数
+
+
+**归集器**
+	accumulator
+	举例：只遍历一次，把奇偶参数分别添加到合适的列表里，这些列表被成为归集器。
+	
