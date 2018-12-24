@@ -42,6 +42,7 @@ split_help([H|T],Odds,Evens) ->
 		true -> split_help(T,Odds,[H|Evens]);
 		false -> split_help(T,[H|Odds],Evens)
 	end.
+	
 
 
 
