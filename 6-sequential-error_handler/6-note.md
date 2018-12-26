@@ -24,4 +24,9 @@
 				after
 					AfterExpressions
 				end
+			执行过程：
+				1.执行FuncOrExpressionSeq.执行过程没有包抛出异常，分别与Pattern(和关卡)等模式匹配，直到成功,如果没有成功，会抛异常而且不会被这个结构的try--catch捕获。整个try ... catch的值就是模式匹配之后的表达式。
+				2.如果执行FuncOrExpressionSeq过程中抛出异常。ExPattern1等捕捉模式就会与它们进行匹配。ExceptionType是一个原子(throw,exit,error其中之一),如果省略ExceptionType,默认就是throw
+				3.Erlang运行时系统检测到的内部错误总是带有error标签
+				4.after之后的代码，一定会执行，不管是否有错误异常,但它的返回值会被抛弃.
 		2.catch
