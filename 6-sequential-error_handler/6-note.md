@@ -30,3 +30,15 @@
 				3.Erlang运行时系统检测到的内部错误总是带有error标签
 				4.after之后的代码，一定会执行，不管是否有错误异常,但它的返回值会被抛弃.
 		2.catch
+			语法格式：	
+			catch generate_exception(I).
+		3.catch比try catch能输出更多的详细信息
+
+		4.捕捉所有的错误(_ 能匹配所有)
+			try Expr  %% 没有of
+			catch
+				_:_ -> ... %% 所有的错误
+				%% _ -> ... %% 捕获throw的错误
+			end
+		5.栈跟踪
+			捕获一个异常错误后，erlang:get_stacktrace()来找到最近的栈跟踪信息
